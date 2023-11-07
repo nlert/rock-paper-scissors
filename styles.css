@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kanit', sans-serif;
+}
+
+html {
+    background-color: #181A18;
+    color: #A1CCA5;
+    overflow: hidden;
+}
+
+.fa-solid {
+    transform: rotate(90deg);
+    color: #A1CCA5;
+}
+
+/* Game Content */
+h1 {
+    font-weight: 400;
+    font-size: 3rem;
+    margin-top: -54px;
+}
+
+.main-cont {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.game-cont {
+    display: flex;
+    gap: 75px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Player Side */
+.you-cont, .computer-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+h2 {
+    font-size: 2.3rem;
+}
+
+.player-choice, .comp-choice {
+    height: 200px;
+    width: 200px;
+    border: 3px #A1CCA5 solid;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.question-mark {
+    font-size: 9rem;
+    font-weight: 100;
+}
+
+.selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+button {
+    width: 60px;
+    height: 60px;
+    border: 3px #A1CCA5 solid;
+    border-radius: 10px;
+    background-color: #181A18;
+    transition: 0.3s;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+button i {
+    font-size: 2.5rem;
+}
+
+/* Computer Side */
+.spacer {
+    height: 60px;
+}
+
+.comp-choice-hand {
+    transform: rotate(-90deg) scale(-1, 1);
+}
+
+.choice {
+    font-size: 6rem;
+}
+
+.hide {
+    display: none;
+}
+
+/* Center Stuff */
+.center-txt {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.vs {
+    position: relative;
+    top: -125px;
+    font-size: 1.5rem;
+}
+
+#score {
+    font-size: 1.5rem;
+    position: absolute;
+}

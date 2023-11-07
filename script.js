@@ -1,12 +1,23 @@
-const button = document.querySelector("button");
+const rockButton = document.getElementById("rock-btn");
+const paperButton = document.getElementById("paper-btn");
+const scissorsButton = document.getElementById("scissors-btn");
 
-button.addEventListener('click', function() {
-    for (i = 0; i <= 5; i++) {
-        let playerInput = prompt("Rock, Paper or Scissors?");
-        let playerChoice = playerInput.toLowerCase();
+rockButton.addEventListener('click', function() {
+        let playerChoice = "rock";
         let computerChoice = getComputerChoice();
         playRound(playerChoice, computerChoice);
-    }
+});
+
+paperButton.addEventListener('click', function() {
+    let playerChoice = "paper";
+    let computerChoice = getComputerChoice();
+    playRound(playerChoice, computerChoice);
+});
+
+scissorsButton.addEventListener('click', function() {
+    let playerChoice = "scissors";
+    let computerChoice = getComputerChoice();
+    playRound(playerChoice, computerChoice);
 });
 
 function playRound (playerChoice, computerChoice) {
@@ -14,19 +25,23 @@ function playRound (playerChoice, computerChoice) {
         (playerChoice == "rock" && computerChoice == "paper") ||
         (playerChoice == "paper" && computerChoice == "scissors") ||
         (playerChoice == "scissors" && computerChoice == "rock")
-        ) {
-            console.log("You lose");
-            return "You lose";
-        } else if (
+    ) {
+        console.log("You lose");
+        return "You lose";
+    } else if (
         (playerChoice == "paper" && computerChoice == "rock") ||
         (playerChoice == "scissors" && computerChoice == "paper") ||
         (playerChoice == "rock" && computerChoice == "scissors")
-        ) {
-            console.log("You win");
-            return "You win";
-        } else {
-            console.log("Tie");
-            return "Tie";
+    ) {
+        console.log("You win");
+        return "You win";
+    } else if (
+        (playerChoice == "paper" && computerChoice == "paper") ||
+        (playerChoice == "scissors" && computerChoice == "scissors") ||
+        (playerChoice == "rock" && computerChoice == "rock")
+    ) {
+        console.log("Tie");
+        return "Tie";
     };
 }
 
