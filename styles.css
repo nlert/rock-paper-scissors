@@ -20,6 +20,7 @@ html {
 
 /* Game Content */
 h1 {
+    text-align: center;
     font-weight: 400;
     font-size: 3rem;
     margin-top: -54px;
@@ -122,11 +123,68 @@ button i {
 
 .vs {
     position: relative;
-    top: -125px;
+    top: -145px;
     font-size: 1.5rem;
 }
 
 #score {
     font-size: 1.5rem;
     position: absolute;
+}
+
+@media screen and (max-width: 650px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .game-cont {
+        gap: 0;
+    }
+
+    .player-choice, .comp-choice {
+        width: 100px;
+        height: 100px;
+        border-radius: 15px;
+    }
+
+    .selection {
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    button {
+        width: 60px;
+        height: 60px;
+    }
+
+    .spacer {
+        height: 200px;
+        width: 100px;
+    }
+
+    .question-mark {
+        font-size: 5rem;
+    }
+
+    .choice {
+        font-size: 4rem;
+    }
+
+    .vs {
+        font-size: 1rem;
+        top: -165px;
+    }
+
+    button:hover {
+        transform: scale(1);
+    }
+
+    #score {
+        font-size: 1.2rem;
+        text-align: center;
+    }
 }
