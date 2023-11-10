@@ -1,4 +1,3 @@
-// Player Choices and Event Listeners
 const rockButton = document.getElementById("rock-btn");
 const paperButton = document.getElementById("paper-btn");
 const scissorsButton = document.getElementById("scissors-btn");
@@ -33,8 +32,10 @@ scissorsButton.addEventListener('click', function() {
     playRound(playerChoice, computerChoice);
 });
 
-// Determine Winner
 const displayWinner = document.getElementById("score");
+
+let playerScore = 0;
+let compScore = 0;
 
 function playRound(playerChoice, computerChoice) {
     if (
@@ -42,12 +43,14 @@ function playRound(playerChoice, computerChoice) {
         (playerChoice == "paper" && computerChoice == "scissors") ||
         (playerChoice == "scissors" && computerChoice == "rock")
     ) {
+        compScore = compScore + 1;
         displayWinner.textContent = "YOU LOSE";
     } else if (
         (playerChoice == "paper" && computerChoice == "rock") ||
         (playerChoice == "scissors" && computerChoice == "paper") ||
         (playerChoice == "rock" && computerChoice == "scissors")
     ) {
+        playerScore = playerScore + 1;
         displayWinner.textContent = "YOU WIN";
     } else if (
         (playerChoice == "paper" && computerChoice == "paper") ||
@@ -56,9 +59,45 @@ function playRound(playerChoice, computerChoice) {
     ) {
         displayWinner.textContent = "TIE";
     };
+
+    if (playerScore === 3) {
+        roundEnd("win", playerScore, compScore);
+    } else if (compScore === 3) {
+        roundEnd("lose", playerScore, compScore);
+    }
 }
 
-// Display Player and Computer Selections
+const endScreen = document.getElementById("end-screen");
+const endScorePlayer = document.getElementById("end-score-you");
+const endScoreComp = document.getElementById("end-score-comp");
+const endResult = document.getElementById("end-result");
+
+function roundEnd(winOrLose, playerWins, compWins) {
+    if (winOrLose === "win") {
+        endScreen.classList.remove("hide");
+        endScorePlayer.textContent = playerWins;
+        endScoreComp.textContent = compWins;
+        endResult.textContent = "You Lost";
+    } else if (winOrLose === "lose") {
+        endScreen.classList.remove("hide");
+        endScorePlayer.textContent = playerWins;
+        endScoreComp.textContent = compWins;
+        endResult.textContent = "You Lost";
+    }
+}
+
+const btnPlayAgain = document.getElementById("play-again");
+
+btnPlayAgain.addEventListener('click', () => {
+    endScreen.classList.add("hide");
+    clearDisplay();
+    qMarkYou.classList.remove("hide");
+    qMarkComp.classList.remove("hide");
+    compScore = 0;
+    playerScore = 0;
+    displayWinner.textContent = "";
+})
+
 const qMarkYou = document.getElementById("question-mark-you");
 const qMarkComp = document.getElementById("question-mark-comp");
 
@@ -86,7 +125,6 @@ function displayChoice(playerChoice, computerChoice) {
     }
 }
 
-// Random Computer Selection
 function getComputerChoice() {
     arr = ["rock", "paper", "scissors"]
 
@@ -94,7 +132,6 @@ function getComputerChoice() {
     return arr[randomNum];
 }
 
-// Clear Selection Display Before Updating With New Selection
 function clearDisplay() {
     playerReveal.classList.remove("fa-hand");
     playerReveal.classList.remove("fa-hand-fist");

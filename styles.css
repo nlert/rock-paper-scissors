@@ -23,11 +23,12 @@ h1 {
     text-align: center;
     font-weight: 400;
     font-size: 3rem;
-    margin-top: -54px;
 }
 
 .main-cont {
-    height: 100vh;
+    position: absolute;
+    top: calc(50vh - 340px);
+    height: 680px;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -109,7 +110,7 @@ button i {
 }
 
 .hide {
-    display: none;
+    display: none !important;
 }
 
 /* Center Stuff */
@@ -130,6 +131,61 @@ button i {
 #score {
     font-size: 1.5rem;
     position: absolute;
+}
+
+/* Round End */
+.round-end {
+    position: fixed;
+    top: calc(50vh - 200px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+    width: 500px;
+    height: 400px;
+    background-color: #181A18;
+    border-radius: 25px;
+    border: 3px #A1CCA5 solid;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px;
+    opacity: 0.98;
+}
+
+.round-end h1 {
+    font-weight: 600;
+}
+
+.end-score {
+    display: flex;
+    justify-content: space-between;
+}
+
+.end-score-you-cont, .end-score-comp-cont {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.end-score-you-cont h2, .end-score-comp-cont h2 {
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.end-score-you-cont p, .end-score-comp-cont p {
+    font-size: 1.5rem;
+}
+
+.round-end button {
+    width: 200px;
+    color: #A1CCA5;
+    font-size: 2rem;
+}
+
+.round-end button:hover {
+    transform: scale(1.05);
 }
 
 @media screen and (max-width: 650px) {
@@ -186,5 +242,24 @@ button i {
     #score {
         font-size: 1.2rem;
         text-align: center;
+    }
+
+    .round-end {
+        width: 300px;
+    }
+
+    .end-score {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .end-score-you-cont, .end-score-comp-cont {
+        width: 150px;
+        border: 1px #A1CCA5 solid;
+        border-radius: 20px;
+    }
+
+    .end-score-you-cont h2, .end-score-comp-cont h2 {
+        font-size: 1.5rem;
     }
 }
