@@ -74,15 +74,15 @@ const endResult = document.getElementById("end-result");
 
 function roundEnd(winOrLose, playerWins, compWins) {
     if (winOrLose === "win") {
-        endScreen.classList.remove("hide");
         endScorePlayer.textContent = playerWins;
         endScoreComp.textContent = compWins;
-        endResult.textContent = "You Lost";
+        endResult.textContent = "You Won";
+        endScreen.classList.remove("hide");
     } else if (winOrLose === "lose") {
-        endScreen.classList.remove("hide");
         endScorePlayer.textContent = playerWins;
         endScoreComp.textContent = compWins;
         endResult.textContent = "You Lost";
+        endScreen.classList.remove("hide");
     }
 }
 
