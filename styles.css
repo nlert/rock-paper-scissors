@@ -137,6 +137,7 @@ button i {
 .round-end {
     position: fixed;
     top: calc(50vh - 200px);
+    left: calc(50vw - 250px);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -149,7 +150,7 @@ button i {
     justify-content: space-between;
     align-items: center;
     padding: 35px;
-    opacity: 0.98;
+    opacity: 0.96;
 }
 
 .round-end h1 {
@@ -246,6 +247,7 @@ button i {
 
     .round-end {
         width: 300px;
+        left: calc(50vw - 150px);
     }
 
     .end-score {
